@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #container {
+        margin: auto;
+        max-width: 60%;
+      }
+      .main {
+        display: grid;
+
+        grid-template-areas:
+          "red_box red_box red_box red_box "
+          "green_box teal_box teal_box teal_box ";
+        grid-gap: 50px;
+      }
+      .red_box {
+        background-color: red;
+        grid-area: red_box;
+        height: 60px;
+        border-radius:10px;
+      }
+      .green_box {
+        background-color: rgb(26, 219, 26);
+        grid-area: green_box;
+        height: 500px;
+        border-radius:10px;
+      }
+      .teal_box {
+        background-color: teal;
+        grid-area: teal_box;
+        height: 500px;
+        border-radius:10px;
+              }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="main">
+        <div class="red_box"></div>
+        <div class="green_box"></div>
+        <div class="teal_box"></div>
+      </div>
+    </div>
+  </body>
+</html>

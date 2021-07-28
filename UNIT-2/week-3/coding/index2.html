@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #world {
+        display: grid;
+        grid-template-columns: 40% 40%;
+        padding: 5%;
+        gap: 10%;
+      }
+      #country {
+        height: 200px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>World Map guide</h1>
+    <div id="world">
+      <div id="country">India</div>
+      <div id="country">Usa</div>
+      <div id="country">Austrial</div>
+      <div id="country">Brazil</div>
+    </div>
+  </body>
+</html>
+
+<script>
+  function addListerners() {
+    var countries = document.querySelectorAll("#country"); //if it's query we have to give types.
+
+    
+    for (let i = 0; i < countries.length; i++) {
+      countries[i].addEventListener("mouseover", function () {
+        alert(`you are in ${countries[i].innerHTML}`);
+      });
+    }
+  }
+
+  addListerners();
+</script>

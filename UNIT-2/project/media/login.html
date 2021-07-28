@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <ul>
+      <li><a href="signup.html">Signup</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="home.html">Home</a></li>
+    </ul>
+    <div id="parent">
+      <form id="login" onsubmit="startLogin(event)">
+        <div class="imagecontainer">
+          <img
+            src="https://www.w3schools.com/w3images/avatar2.png"
+            alt="avtar"
+            id="image"
+          />
+        </div>
+        <div>Email</div>
+        <input type="text" id="email" placeholder="Email" />
+        <div>Password</div>
+        <input type="password" id="psw" placeholder="Password" />
+        <br />
+        <input id="sumbit" type="submit" />
+      </form>
+    </div>
+  </body>
+</html>
+
+<script src="login.js"></script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note Taking App</title>
+  </head>
+  <body>
+    <h1>Note taking application</h1>
+
+    <select id="day">
+      <option value="Day1">Day 1</option>
+      <option value="Day2">Day 2</option>
+      <option value="Day3">Day 3</option>
+      <option value="Day4">Day 4</option>
+    </select>
+
+    <input onkeypress="addNote(event)" type="text" id="note" />
+  </body>
+</html>
+
+<script>
+  //1. Take an input from user - note, string
+  //2. select a day.
+  //3. implement select tag => implant optaion tag
+
+  var notes = {
+    day1: [],
+    day2: [],
+    day3: [],
+    day4: [],
+  };
+
+  function addNote(e) {
+    if (e.key === "Enter") {
+      var note = document.getElementById("note").value;
+
+      var day = document.getElementById("day").value;
+
+      if (day == "Day1") {
+        notes.day1.push(note);
+      } else if (day == "Day2") {
+        notes.day2.push(note);
+      } else if (day == "Day3") {
+        notes.day3.push(note);
+      } else if (day == "Day4") {
+        notes.day4.push(note);
+      }
+    }
+    console.log("notes:", notes);
+  }
+</script>

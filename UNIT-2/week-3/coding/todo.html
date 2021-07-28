@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>TODO LIST</h1>
+
+    <input type="text" id="inp" />
+
+    <button onclick="addTask()">Add Task</button>
+
+    <div id="tasks"></div>
+  </body>
+</html>
+
+<script>
+  var tasks = document.getElementById("tasks");
+  function addTask() {
+    var div = document.createElement("div");
+
+    var task = document.getElementById("inp").value;
+
+    div.innerHTML = `<p>${task}</p><button onclick="Done()">Done</button><button onclick="Remove()">Remove</button>
+`;
+
+    function Done() {
+      alert("Done");
+    }
+
+    function Remove() {
+      alert("Remove");
+    }
+
+    tasks.append(div);
+  }
+</script>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .done {
+        text-decoration: line-through;
+        color: black;
+      }
+      body{
+          background-color:aquamarine
+      }
+      button{
+          height: 25px;
+          width: 150px;
+          font-size:20px;
+          font-weight: bold;
+          border-radius: 50px;
+          border: 2px solid red;
+          background-color:blueviolet
+      }
+      #inp{
+          height: 30px;
+          width: 250px;
+          border-radius:10px ;
+          font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Todo List</h1>
+
+    <input type="text" id="inp" />
+    <button onclick="addTask()">Add a task</button>
+
+    <div id="tasks"></div>
+  </body>
+</html>
+<script>
+  var tasks = document.getElementById("tasks");
+  var id = 0;
+
+  function addTask() {
+    var div = document.createElement("div");
+    var task = document.getElementById("inp").value;
+
+    id = id + 1;
+
+    div.innerHTML = `<p id=${id}>${task}</p> <button onclick="Done(${id})">Done</button> <button onclick="Remove(${id})">Remove</button> `;
+
+    tasks.append(div);
+    // console.log(div);
+  }
+
+  function Done(i) {
+    var clicked_p = document.getElementById(i);
+
+    clicked_p.setAttribute("class", "done");
+  }
+  function Remove(i) {
+    var clicked_p = document.getElementById(i);
+
+    var div = clicked_p.parentElement;
+
+    div.remove();
+  }
+</script>

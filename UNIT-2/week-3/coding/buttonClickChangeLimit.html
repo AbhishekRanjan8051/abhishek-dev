@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #f2 {
+      width: 300px;
+      height: 400px;
+      font-size: 22px;
+      /* font-weight: 1400px; */
+    }
+  </style>
+
+  <body>
+    <h1>
+      The buttons color changes to a random value when it is clicked! But only
+      two times!
+    </h1>
+    <button id="f2" onmouseover="bigImg(this)" onmouseout="normalImg(this)">
+      Click here to change my color!
+    </button>
+  </body>
+</html>
+<script>
+  var button = document.getElementById("f2");
+
+  function random(number) {
+    return Math.floor(Math.random() * number);
+  }
+
+  function randomColor() {
+    return "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")";
+  }
+  var count = 0;
+
+  function setRandom() {
+    count++;
+
+    var color_val = randomColor();
+    document.getElementById("f2").style.color = color_val;
+    if (count == 2) {
+      button.removeEventListener("click", setRandom);
+    }
+  }
+
+  function bigImg(sizes) {
+    sizes.style.height = "450px";
+    sizes.style.width = "450px";
+  }
+
+  function normalImg(sizes) {
+    sizes.style.height = "200px";
+    sizes.style.width = "200px";
+  }
+
+  // btn2.addEventListener("click",function_2)
+  button.addEventListener("click", setRandom);
+  // btn2.addEventListener("onmouseover", setWid)
+</script>

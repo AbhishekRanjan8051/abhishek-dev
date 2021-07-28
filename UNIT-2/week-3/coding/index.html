@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Prision Security System</h1>
+
+    <!-- <button onclick="showAlert('Main Door Braech')">Main Door Braech</button>
+    <button onclick="showAlert('Prison break')">Prison break</button>
+    <button onclick="showAlert('Prisoner Run')">Prisoner Run</button>
+    <button onclick="showAlert('need ambulance')">need ambulance</button>
+    <button onclick="showAlert('CCTV not working')">CCTV not working</button>
+    <button onclick="showAlert('Gas Leak')">Gas Leak</button>
+    <button onclick="showAlert('Fire')">Fire</button>
+    <button onclick="showAlert('Prisoner Fight')">Prisoner fight</button>
+    <button onclick="showAlert('Prison cell open')">Prison cell open</button> -->
+
+    <!-- <input type="text" id="custommessage" placeholder="Enter custom alret" />
+    <button onclick="showCustomAlret()">show message</button>
+    <div id="message"></div> -->
+
+    <input type="text" id="cust_msg" placeholder="Enter Customer Message" />
+
+    <button onclick="showAlert()">show msg</button>
+
+    <div id="message"></div>
+  </body>
+</html>
+
+<script>
+  function showAlert() {
+    var sho = document.getElementById("cust_msg").value;
+
+    var div = document.getElementById("message");
+    var h2 = document.createElement("h2");
+
+    h2.textContent = sho;
+
+    div.append(h2);
+  }
+
+//   function showCustomAlret() {
+//     var msg = document.getElementById("custommessage").value;
+//     var div = document.getElementById("message");
+
+//     var h1 = document.createElement("h1");
+//     h1.textContent = msg;
+
+//     div.appendChild(h1);
+//   }
+</script>

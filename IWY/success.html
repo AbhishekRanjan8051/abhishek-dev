@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      }
+      /* style of nav bar starts */
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: rgb(66, 66, 66);
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+      }
+
+      li a:hover:not(.active) {
+        background-color: rgb(255, 253, 253);
+        color: rgb(255, 0, 0);
+      }
+
+      .active {
+        background-color: #f70e0e;
+      }
+      #logo {
+        color: white;
+      }
+      #sucess {
+        margin: 90px;
+        font-size: 100px;
+        font-weight: 700;
+        color: tomato;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- nav bar start -->
+    <ul>
+      <li style="float: left">
+        <a id="logo" href="Products.html"
+          ><img
+            src="https://img.icons8.com/ios-filled/50/000000/javascript-logo.png"
+        /></a>
+      </li>
+      <li><a href="Products.html">Products</a></li>
+      <li><a href="form.html">Add products</a></li>
+      <li style="float: right">
+        <a class="active" href="cart.html"
+          ><img
+            src="https://img.icons8.com/material-outlined/30/000000/shopping-cart--v2.png"
+        /></a>
+      </li>
+    </ul>
+    <!-- nav bar end -->
+
+    <center><div id="sucess">Thank You for Purchasing</div></center>
+  </body>
+</html>

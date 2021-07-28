@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      }
+      /* style of nav bar starts */
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: rgb(66, 66, 66);
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+      }
+
+      li a:hover:not(.active) {
+        background-color: rgb(255, 253, 253);
+        color: rgb(255, 0, 0);
+      }
+
+      .active {
+        background-color: #f70e0e;
+      }
+      #logo {
+        color: white;
+      }
+      /* style of nav bar end */
+      div > img {
+        width: auto;
+        height: auto;
+      }
+
+      div > button {
+        padding: 10px;
+        background-color: red;
+        border-color: red;
+        color: white;
+      }
+
+      #container {
+        display: grid;
+        grid-template-columns: repeat(4, 20%);
+        grid-gap: 5%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- nav bar start -->
+    <ul>
+      <li style="float: left">
+        <a id="logo" href="Products.html"
+          ><img
+            src="https://img.icons8.com/ios-filled/50/000000/javascript-logo.png"
+        /></a>
+      </li>
+      <li><a href="Products.html">Products</a></li>
+      <li><a href="form.html">Add products</a></li>
+      <li style="float: right">
+        <a class="active" href="cart.html"
+          ><img
+            src="https://img.icons8.com/material-outlined/30/000000/shopping-cart--v2.png"
+        /></a>
+      </li>
+    </ul>
+    <!-- nav bar end -->
+
+    <center><h1>All Products</h1></center>
+
+    <div id="container"></div>
+  </body>
+</html>
+<script>
+  var data_div = document.getElementById("container");
+  function appendProducts(el) {
+    var div = document.createElement("div");
+
+    let p_name = document.createElement("p");
+    p_name.innerHTML = el.name;
+
+    let p_price = document.createElement("p");
+    p_name.innerHTML = el.price;
+
+    let img = document.createElement("img");
+    img.src = el.image;
+
+    let btn = document.createElement("button");
+    btn.textContent = "add to cart";
+
+    btn.addEventListener("click", function () {
+      addToCart(el);
+    });
+
+    btn.style.display = "block";
+    div.append(img, p_name, p_price, btn);
+    data_div.append(div);
+  }
+
+  function showProducts() {
+    let data = JSON.parse(localStorage.getItem("products"));
+    data_div.innerHTML = null;
+    data.forEach(function (el) {
+      appendProducts(el);
+    });
+  }
+  showProducts();
+
+  function addToCart(x) {
+    let arr;
+    arr = localStorage.getItem("carted");
+    if (arr == null) {
+      arr = [];
+    } else {
+      arr = JSON.parse(localStorage.getItem("carted"));
+    }
+
+    arr.push(x);
+
+    localStorage.setItem("carted", JSON.stringify(arr));
+
+    function showCart() {
+      window.location.href = "cart.html";
+    }
+  }
+</script>

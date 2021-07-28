@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>Prototype and inheritances</div>
+  </body>
+</html>
+
+<script>
+    const cat = {
+      type: "cat",
+      legs: "4",
+      claws: "sharp",
+      tail: "true",
+      food: "carnivorus",
+    };
+
+    const tiger = Object.create(cat);
+    const lion = Object.setPrototypeOf(
+      {
+        name: "lion",
+        canclimb: false,
+        claws: "blunt",
+      },
+      cat
+    );
+
+    console.log(lion);
+    //   console.log(lion.claws);
+
+    //   console.log(Object.getPrototypeOf(lion));
+
+    tiger.canClimbing = false;
+    console.log(tiger);
+
+
+  //second
+  // function iphone13() {
+  //   this.name = "iphone 13";
+  //   this.year = "2022";
+  //   this.factory = "india";
+  // }
+  // const i1 = new iphone13();
+  // i1.camera = "22Mp";
+
+  // iphone13.prototype.buildfaceid = function () {
+  //   console.log("face id installed");
+  // };
+
+  // iphone13.prototype.camera = "20MP";
+  // console.log("iphone13:", iphone13);
+
+  // iphone13.prototype.add5G = function () {
+  //   this.Five_G = true;
+  // };
+
+  // i1.add5G();
+  // console.log("i1:", i1);
+</script>

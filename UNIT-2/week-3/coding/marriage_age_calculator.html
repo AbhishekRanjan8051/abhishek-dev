@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        h1{
+            color: green;
+        }
+        #gender{
+            color:hsl(310, 85%, 44%);
+            height: 30px;
+            width: 100px;
+        }
+        #btn{
+            background-color: red;
+        height: 30px;
+        margin-left: 10px;
+        margin-top: 10px;
+        border-radius: 10px;
+        }
+        #birthyear{
+            height: 30px;
+            width: 200px;
+            color:rgb(10, 21, 179);
+            font-size: 20px;
+            border: 3px solid rgba(12, 185, 197, 0.788);
+        }
+        .label{
+            font-size:25px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    
+      <h1 >Marriage Age Validator</h1>
+      <span class="label">select your gender</span>
+      
+      <select name="" id="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <br>
+      <br />
+      <input
+        type="number"
+        onclick=""
+        id="birthyear"
+        placeholder="type your birth year"
+      />
+      <br />
+      <button onclick="checkeligibility()" id="btn">cheak eligibility</button>
+    </center>
+  </body>
+</html>
+<script>
+  function checkeligibility() {
+    var year = document.getElementById("birthyear").value;
+    var sex = document.getElementById("gender").value;
+
+    var age = 2021-year;
+
+    if((sex == "male" && age >= 22)||(sex == "female" && age>=20)){
+        alert("you have valid legal age to get married")
+    } else {
+        alert("you have not valid legal age to get married")
+    }
+    
+  }
+</script>

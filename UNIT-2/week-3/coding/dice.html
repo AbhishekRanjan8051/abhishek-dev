@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #container {
+        max-width: 70%;
+        margin: auto;
+        padding: 20px;
+        border-radius: 50px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        background-color: rgb(17, 136, 43);
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      #container button {
+        border-radius: 10px;
+        color: white;
+        background-color: rgb(255, 0, 128);
+        border-style: double;
+        padding: 10px;
+        font-size: 20px;
+        margin: 10px;
+        font-weight: bolder;
+      }
+
+      #container button:hover {
+        cursor: pointer;
+        color: rgb(255, 0, 128);
+        background-color: white;
+      }
+
+      h1 {
+        color: rgb(8, 28, 211);
+        padding: 10px;
+      }
+
+      #dice {
+        max-width: 10%;
+        font-size: 80px;
+        font-weight: bolder;
+        margin: auto;
+        padding: 80px;
+        border-radius: 10px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        border: 2px solid black;
+        background-color: rgb(61, 176, 221);
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border-style: double;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>DICE GAME</h1>
+      <button id="throdDice">Throw Dice</button>
+    </div>
+
+    <div id="dice">0</div>
+  </body>
+</html>
+
+<script>
+  var throwDice = document.getElementById("throdDice");
+
+  function random(number) {
+    return Math.ceil(Math.random() * number);
+  }
+
+  function randamNumber() {
+    var div = document.getElementById("dice");
+    div.innerHTML = `${random(6)}`;
+
+    var value = Number(div.innerHTML.trim());
+
+    if (value == 1) {
+      div.style.color = "red";
+      div.style.background = "teal";
+    } else if (value == 2) {
+      div.style.color = "green";
+      div.style.background = "aqua";
+    } else if (value == 3) {
+      div.style.color = "black";
+      div.style.background = "skyblue";
+    } else if (value == 4) {
+      div.style.color = "blue";
+      div.style.background = "grey";
+    } else if (value == 5) {
+      div.style.color = "darkred";
+      div.style.background = "skyblue";
+    }else {
+      div.style.color = "yellow";
+      div.style.background = "rgb(116, 114, 112)";
+    }
+  }
+
+  throwDice.addEventListener("click", randamNumber);
+</script>

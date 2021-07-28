@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 50%;
+      }
+
+      #data {
+        display: grid;
+        grid-template-columns: repeat(4, 20%);
+        grid-gap: 5%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1.create a form -->
+    <!-- name , image usl , rating , description -->
+    <!-- add to visited button in each div -->
+    <h1>My Tour Manager</h1>
+    <form action="" id="myForm">
+      <input type="text" id="name" placeholder="name" />
+      <input type="number" id="rating" placeholder="rating" />
+      <input type="text" id="img" placeholder="image" />
+    </form>
+    <button type="submit" onclick="storeLocation()">Add location</button>
+    <button type="submit" onclick="showVisited()">Show visited</button>
+
+    <div id="data"></div>
+  </body>
+</html>
+
+<script src="main.js"></script>

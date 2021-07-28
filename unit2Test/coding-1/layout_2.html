@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>layout</title>
+    <style>
+      @media only screen and (min-width: 1200px) {
+        #maincontainer {
+          height: 1500px;
+          width: 90%;
+          margin: auto;
+        }
+        .box1 {
+          height: 100px;
+          width: 60%;
+          margin: auto;
+          background-color: white;
+        }
+        div h5 {
+          padding-left: 350px;
+          color: red;
+        }
+        .subheading {
+          padding-left: 300px;
+          color: black;
+        }
+        .box2 {
+          height: 440px;
+          width: 90%;
+          background-color: white;
+
+          margin: 20px auto;
+        }
+        .box2_1 {
+          height: 350px;
+          width: 350px;
+
+          float: left;
+          margin-left: 50px;
+        }
+        .date {
+          font-weight: 15px;
+          color: rgb(124, 116, 116);
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .type {
+          font-weight: bold;
+          color: rgb(0, 0, 0);
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .button {
+          background-color: red;
+          height: 50px;
+          margin-left: 500px;
+          margin-top: 40px;
+        }
+        .box3 {
+          height: 180px;
+          width: 90%;
+          background-color: white;
+          margin: auto;
+        }
+        div > h4 {
+          color: red;
+          padding-left: 520px;
+        }
+
+        div h1 {
+          color: black;
+          padding-left: 480px;
+        }
+        div h1 + p {
+          text-align: center;
+          font-size: 20px;
+          margin-left: 250px;
+          margin-right: 250px;
+          color: rgb(136, 127, 127);
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .box4 {
+          display: grid;
+          grid-template-columns: 400px 400px 400px;
+          grid-template-rows: 300px 300px;
+          grid-gap: 15px;
+          background-color: white;
+          padding: 10px;
+          margin-top: 40px;
+          margin-left: 50px;
+        }
+        .box4 > div {
+          text-align: left;
+          font-size: 25px;
+        }
+        .detail {
+          padding-left: 55px;
+          font-size: 18px;
+          color: rgb(161, 147, 147);
+        }
+        .title {
+          font-weight: bold;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="maincontainer">
+      <div class="box1">
+        <h5>NEWS & UPDATE</h5>
+        <h1 class="subheading">Our Blog Posts</h1>
+      </div>
+      <div class="box2">
+        <div class="box2_1">
+          <image
+            src="https://thumbs.dreamstime.com/b/night-view-outside-five-star-hotel-delhi-india-green-trees-light-view-night-night-view-outside-five-star-hotel-174737130.jpg"
+            height="290px"
+            width="350px"
+          ></image>
+          <span class="date">29 January 2019</span>
+          <br />
+          <span class="type">Architectural Art Modern</span>
+        </div>
+        <div class="box2_1">
+          <image
+            src="https://i2.wp.com/theluxurytravelexpert.com/wp-content/uploads/2014/03/trump-hotel-chicago-illinois-usa.jpg"
+            height="290px"
+            width="350px"
+          ></image>
+          <span class="date">29 January 2019</span>
+          <br />
+          <span class="type">Architectural Art Modern</span>
+        </div>
+        <div class="box2_1">
+          <image
+            src="https://media.designcafe.com/wp-content/uploads/2019/11/11160149/parallel-kitchen-designs-for-your-home-1.jpg"
+            height="290px"
+            width="350px"
+          ></image>
+          <span class="date">29 January 2019</span>
+          <br />
+          <span class="type">Architectural Art Modern</span>
+        </div>
+        <button class="button">VIEW ALL POSTS</button>
+      </div>
+
+      <div class="box3">
+        <h4>SERVICES</h4>
+        <h1>Our Services</h1>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates
+          beatae deserunt provident facere quod. Dolores.
+        </p>
+      </div>
+      <div class="box4">
+        <div>
+          <image
+            src="https://mcvt-comet-37.fra1.cdn.digitaloceanspaces.com//previews/19666/preview_19666.jpg"
+            height="50px"
+            width="50px"
+          ></image>
+          <span class="title">Innovative Structure</span>
+          <p class="detail">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora,
+            numquam accusantium. Tempore optio mollitia sapiente!
+          </p>
+        </div>
+        <div>
+          <image
+            src="https://i2.wp.com/www.lifeofanarchitect.com/wp-content/uploads/2019/08/Architectural-Sketch-Series-Schematic-Design-04.jpg?resize=1200%2C570&ssl=1"
+            height="50px"
+            width="50px"
+          ></image>
+
+          <span class="title">Architectural Design</span>
+          <p class="detail">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora,
+            numquam accusantium. Tempore optio mollitia sapiente!
+          </p>
+        </div>
+        <div>
+          <image
+            src="https://image.shutterstock.com/image-vector/light-bulb-line-icon-trendy-260nw-1029232288.jpg"
+            height="50px"
+            width="50px"
+          ></image>
+
+          <span class="title">Interior Design</span>
+          <p class="detail">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora,
+            numquam accusantium. Tempore optio mollitia sapiente!
+          </p>
+        </div>
+        <div>
+          <image
+            src="https://cdn5.vectorstock.com/i/1000x1000/08/24/house-window-icon-cartoon-isolated-black-and-white-vector-25740824.jpg"
+            height="50px"
+            width="50px"
+          ></image>
+
+          <span class="title">Modern Window Design</span>
+          <p class="detail">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora,
+            numquam accusantium. Tempore optio mollitia sapiente!
+          </p>
+        </div>
+        <div>
+          <image
+            src="https://www.fenesta.com/images/design.png"
+            height="50px"
+            width="50px"
+          ></image>
+
+          <span class="title">Expert Architect</span>
+          <p class="detail">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora,
+            numquam accusantium. Tempore optio mollitia sapiente!
+          </p>
+        </div>
+        <div>
+          <image
+            src="https://5.imimg.com/data5/SELLER/Default/2020/9/PN/ST/ZJ/113748262/whatsapp-image-2020-09-25-at-10-29-52-am-1--500x500.jpeg"
+            height="50px"
+            width="50px"
+          ></image>
+
+          <span class="title">Sofa Design</span>
+          <p class="detail">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora,
+            numquam accusantium. Tempore optio mollitia sapiente!
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

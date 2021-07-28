@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="cart.css">
+  </head>
+  <body>
+    <div>
+        <ul>
+          <li style="float: left"><a href="products.html">PRODUCTS</a></li>
+          <li style="float: right"><a href="carts.html">CART</a></li>
+          <li><a href="checkouts.html">CHECKOUT</a></li>Checkout</a></li>
+        </ul>
+      </div>
+      <center><h1>CART</h1></center>
+
+      <div id="final">
+          <div id="finalstore"></div>
+          <div id="finalcart"></div>
+
+          <div id="promoM">
+              <input type="text" id="promo" placeholder="type promocode"/>
+              <button id = "promo_btn" onclick="checkPromo()">Apply Now</button>
+              <button type="submit" id="checkout" onclick ="sucess()">
+            <span>CHECKOUT</span></button>
+          </div>
+
+          <div id="container"></div>
+
+      </div>
+  </body>
+</html>
+<script src = "cart.js"></script>

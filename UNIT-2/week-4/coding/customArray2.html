@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>custom array 2</title>
+  </head>
+  <body>
+    <h1>Custom array 2</h1>
+  </body>
+</html>
+<script>
+
+    // making arrya as an key value pair and also giving key as indexes
+  function myArray(x) {
+    this.length = arguments.length;
+
+    for (let i = 0; i < this.length; i++) {
+      this[`${i}`] = arguments[i];
+    }
+  }
+  const arr = new myArray(55, 28, 95, 65, "hi", "abhishek", 100);
+
+  console.log(arr);
+</script>

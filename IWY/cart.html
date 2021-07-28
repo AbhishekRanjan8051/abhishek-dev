@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      }
+      /* style of nav bar starts */
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: rgb(66, 66, 66);
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+      }
+
+      li a:hover:not(.active) {
+        background-color: rgb(255, 253, 253);
+        color: rgb(255, 0, 0);
+      }
+
+      .active {
+        background-color: #f70e0e;
+      }
+      #logo {
+        color: white;
+      }
+      /* style of nav bar end */
+      div > img {
+        width: auto;
+        height: auto;
+      }
+
+      #promocode_btn {
+        padding: 10px;
+        background-color: red;
+        border-color: red;
+        color: white;
+      }
+
+      #container {
+        display: grid;
+        grid-template-columns: repeat(4, 20%);
+        grid-gap: 5%;
+      }
+      #final {
+        float: right;
+      }
+      #promoM {
+        margin: 20px;
+      }
+      #promoM > input {
+        padding: 10px;
+        color: rgb(255, 254, 254);
+        background-color: rgb(80, 78, 78);
+      }
+      #cheakout {
+        margin-top: -80px;
+        padding: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+        font-size: x-large;
+        background-color: crimson;
+        color: white;
+        border-radius: 4px;
+        border: none;
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+      }
+      #cheakout span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+
+      #cheakout span:after {
+        content: "\00bb";
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+
+      #cheakout:hover span {
+        padding-right: 25px;
+      }
+
+      #cheakout:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- nav bar start -->
+    <ul>
+      <li style="float: left">
+        <a id="logo" href="Products.html"
+          ><img
+            src="https://img.icons8.com/ios-filled/50/000000/javascript-logo.png"
+        /></a>
+      </li>
+      <li><a href="Products.html">Products</a></li>
+      <li><a href="form.html">Add products</a></li>
+      <li style="float: right">
+        <a class="active" href="cart.html"
+          ><img
+            src="https://img.icons8.com/material-outlined/30/000000/shopping-cart--v2.png"
+        /></a>
+      </li>
+    </ul>
+    <!-- nav bar end -->
+    <center><h1>Cart</h1></center>
+    <div id="final">
+      <div id="finalitems"></div>
+
+      <div id="finalcart"></div>
+    </div>
+    <div id="promoM">
+      <input type="text" id="promo" placeholder="type your promocode" />
+      <button id="promocode_btn" onclick="cheakPromo()">apply now</button>
+      <center>
+        <button type="submit" id="cheakout" onclick="success()">
+          <span> cheakout</span>
+        </button>
+      </center>
+    </div>
+
+    <div id="container"></div>
+  </body>
+</html>
+
+<script>
+  var final_items = document.getElementById("finalitems");
+  var final_price = document.getElementById("finalcart");
+  var data_div = document.getElementById("container");
+
+  function appendProducts(el) {
+    var div = document.createElement("div");
+
+    let p_name = document.createElement("p");
+    p_name.innerHTML = el.name;
+
+    let p_price = document.createElement("p");
+    p_name.innerHTML = el.price;
+
+    let img = document.createElement("img");
+
+    img.setAttribute("src", el.image);
+    img.setAttribute("loading", "lazy");
+
+    div.append(img, p_name, p_price);
+    data_div.append(div);
+  }
+
+  let data = JSON.parse(localStorage.getItem("carted"));
+  var totalItem = document.createElement("p");
+  totalItem.innerHTML = "<b>total items :</b>" + data.length;
+  final_items.append(totalItem);
+
+  var finalprice = 0;
+  for (var i = 0; i < data.length; i++) {
+    let price = Number(data[i].price);
+    finalprice += price;
+  }
+  var fprice = document.createElement("p");
+  fprice.innerHTML = "<b>total Price :</b>" + finalprice;
+  final_price.append(fprice);
+
+  function cheakPromo() {
+    var promo = document.getElementById("promo").value;
+    if (promo == "masai30") {
+      final_price.innerText = null;
+      var final = finalprice - finalprice * 0.3;
+      var newElement = document.createElement("p");
+      newElement.innerHTML =
+        "<b>total Price :</b>" +
+        "<del> <i>" +
+        finalprice +
+        "  " +
+        "</i></del>" +
+        final;
+      final_price.append(newElement);
+    } else {
+      alert("coupon is invalid");
+    }
+    console.log(promo);
+  }
+
+  function showProducts() {
+    let data = JSON.parse(localStorage.getItem("carted"));
+    data_div.innerHTML = null;
+    data.forEach(function (el) {
+      appendProducts(el);
+    });
+  }
+  showProducts();
+
+  function success() {
+    window.location.href = "success.html";
+  }
+</script>

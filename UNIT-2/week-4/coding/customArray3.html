@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>custom array 3</title>
+  </head>
+  <body>
+    <h1>Custom array 3</h1>
+  </body>
+</html>
+<script>
+  const arr = new myArr(55, 28, 95, 65, "hi", "abhishek", 100);
+
+
+  //creating array
+  function myArr(x) {
+    this.length = arguments.length;
+    for (let i = 0; i < this.length; i++) {
+      this[`${i}`] = arguments[i];
+    }
+  }
+//   console.log("myArr:", myArr);
+  // pushing the value  in own language
+  myArr.prototype.पुश = function (p) {
+    let index = this.length;
+    this[index] = p;
+    this.length++;
+  };
+  arr.पुश(45);
+  arr.पुश(458);
+  arr.पुश(8945);
+  console.log(arr);
+
+  // reverse the array starts
+  myArr.prototype.reversed = function () {
+    var answer = [];
+    for (var i = this.length - 1; i >= 0; i--) {
+      answer.push(this[i]);
+    }
+    // console.log("answer:", answer);
+    console.log(answer);
+  };
+  arr.reversed();
+  // array print in array format
+  myArr.prototype.printarray = function () {
+    var ans = [];
+    for (let i = 0; i < this.length; i++) {
+      ans.push(this[i]);
+    }
+    console.log("ans:", ans);
+    // console.log(ans);
+    //return first element from the array
+    console.log(ans[0]);
+  };
+  arr.printarray();
+</script>

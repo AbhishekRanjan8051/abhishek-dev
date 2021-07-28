@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 400px;
+        height: auto;
+        border: 1px solid red;
+        margin: 0 auto;
+        background-color: white;
+        display: grid;
+        grid-template-columns: repeat(2, 150px);
+        grid-template-rows: repeat(2, 150px);
+        column-gap: 100px;
+        row-gap: 10px;
+      }
+      .whole {
+        background-color: teal;
+        grid-column: 1/3;
+        width: 250px;
+        height: 100px;
+        margin-left: 70px;
+      }
+      .min > div {
+        background-color: red;
+        width: 100%;
+        height: 100px;
+      }
+      .min > p {
+        color: honeydew;
+        text-align: center;
+      }
+      .max > div {
+        background-color: green;
+        width: 100%;
+        height: 100px;
+      }
+      .max > p {
+        color: honeydew;
+        text-align: center;
+      }
+      .whole1 {
+        display: grid;
+        grid-template-columns: repeat(3, 120px);
+        grid-template-rows: repeat(5, 100px);
+        gap: 20px;
+      }
+      .whole1 > button,
+      input {
+        background-color: orange;
+        color: blanchedalmond;
+        font-size: 40px;
+      }
+      #id1,
+      #id3,
+      #id7,
+      #id9 {
+        background-color: green;
+      }
+      #id10 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+      }
+      #id11 {
+        grid-column: 1/-1;
+        background-color: black;
+        color: blanchedalmond;
+      }
+      .whole > input {
+        width: 250px;
+        height: 100px;
+      }
+      #min {
+        color: white;
+        font-size: 40px;
+        text-align: center;
+      }
+      #max {
+        color: white;
+        font-size: 40px;
+        text-align: center;
+      }
+      .whole > input {
+        background-color: black;
+        color: blanchedalmond;
+        font-size: 40px;
+        text-align: center;
+      }
+      .whole1 > input {
+        text-align: center;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="min">
+        <div id="min">43</div>
+        <p>MIN</p>
+      </div>
+
+      <div class="max">
+        <div id="max">2019</div>
+        <p>MAX</p>
+      </div>
+      <div class="whole">
+        <input type="text" id="input" value="#" />
+      </div>
+      <div class="whole1">
+        <button id="id1">1</button>
+        <button id="id2">2</button>
+        <button id="id3">3</button>
+        <button id="id4">4</button>
+        <button id="id5">5</button>
+        <button id="id6">6</button>
+        <button id="id7">7</button>
+        <button id="id8">8</button>
+        <button id="id9">9</button>
+        <button id="id10">0</button>
+        <input
+          type="text"
+          id="id11"
+          onclick="result()"
+          value="ENTER"
+          type="submit"
+        />
+        <!-- <button id="id11" onclick="result()">ENTER</button> -->
+      </div>
+    </div>
+  </body>
+  <script>
+    var input = document.getElementById("input");
+    var min = document.getElementById("min");
+    var max = document.getElementById("max");
+    var x = min.innerText;
+    var y = max.innerText;
+
+    //   var one=document.getElementById("id1");
+    //   one.addEventListener('click',function hello(){
+    //       var a=one.innerText;
+    //       input.value=a;
+    //   })
+    var btn = document.querySelectorAll("button");
+    for (let i = 0; i < btn.length; i++) {
+      btn[i].addEventListener("click", function add() {
+        var a = btn[i].innerText;
+        input.value += a;
+      });
+      function result() {
+        var b = input.value;
+        if (b < x) {
+          min.innerText = b;
+        } else if (b > y) {
+          max.innerText = b;
+        }
+      }
+    }
+  </script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        max-width: 60%;
+        margin: auto;
+        margin-left: 30%;
+      }
+
+      .main {
+        margin-top: 10px;
+      }
+
+      .main > div {
+        border-radius: 5px;
+        width: 150px;
+        height: 150px;
+        background-color: rgb(10, 100, 100);
+        margin: 5px;
+        float: left;
+        margin-left: 30px;
+      }
+
+      .main > div:nth-child(2),
+      :nth-child(4),
+      :nth-child(7) {
+        clear: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="main">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </body>
+</html>

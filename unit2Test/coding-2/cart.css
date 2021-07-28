@@ -1,0 +1,19 @@
+ul {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 15px;
+  border: 2px solid black;
+  background-color: rgb(182, 182, 24);
+}
+li {
+  float: right;
+}
+li a {
+  display: block;
+  color: rgb(240, 240, 247);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-radius: 20px;
+}

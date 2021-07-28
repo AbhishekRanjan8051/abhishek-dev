@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Js DataType</title>
+  </head>
+  <body>
+    <button onclick="ObjectsData()">Objects</button>
+    <button onclick="ArraysData()">Arrays</button>
+    <button onclick="FunctionsData()">Functions</button>
+    <button onclick="StringsData()">Strings</button>
+    <button onclick="NumbersData()">Numbers</button>
+    <button onclick="nullData()">null</button>
+    <button onclick="undefinedData()">undefined</button>
+
+    <div id="container1"></div>
+    <div id="container2"></div>
+    <div id="container3"></div>
+    <div id="container4"></div>
+    <div id="container5"></div>
+    <div id="container6"></div>
+    <div id="container7"></div>
+  </body>
+</html>
+
+<script>
+  function ObjectsData() {
+    var students = [
+      "Objects are mutable",
+      "They are addressed by reference, not by value",
+      "Objects, in JavaScript, is it's most important data-type and forms the building blocks for modern JavaScript.",
+      "javaScript object is an entity having state and behavior (properties and method)",
+    ];
+
+    // Selecting the parent container
+    var cont = document.getElementById("container1");
+    cont.innerHTML = null;
+    // looping the students list
+    for (i = 0; i < students.length; i++) {
+      // creating the student element
+      var element = document.createElement("li");
+      element.textContent = students[i];
+
+      // setting the attributes based on odd or even criteria
+
+      // adding the element to the container
+      cont.appendChild(element);
+    }
+  }
+
+  function ArraysData() {
+    var stud = [
+      "In JavaScript, an array is an order list of values. Each value is called an element specified by an index.",
+      "An array can hold values of mixed types.",
+      "JavaScript arrays are dynamic. They grow or shrink as needed.",
+      "Arrays are lists of any kind of data, including other arrays",
+    ];
+
+    // Selecting the parent container
+    var cont = document.getElementById("container2");
+    cont.innerHTML = null;
+    // looping the students list
+    for (i = 0; i < stud.length; i++) {
+      // creating the student element
+      var element = document.createElement("li");
+      element.textContent = stud[i];
+
+      // setting the attributes based on odd or even criteria
+      if (i % 2 == 0) {
+        element.setAttribute("class", "row even_row");
+      } else {
+        element.setAttribute("class", "row odd_row");
+      }
+
+      // adding the element to the container
+      cont.appendChild(element);
+    }
+  }
+
+  function FunctionsData() {
+    var about = [
+      "JavaScript a function allows you to define a block of code, give it a name and then execute it as many times as you want.",
+      "A function can be defined using function keyword and can be executed using () operator.",
+      "A function can include one or more parameters",
+      "A named function is a function declaration if it appears as a statement",
+    ];
+
+    // Selecting the parent container
+    var cont = document.getElementById("container3");
+    cont.innerHTML = null;
+    // looping the students list
+    for (i = 0; i < about.length; i++) {
+      // creating the student element
+      var element = document.createElement("div");
+      element.textContent = about[i];
+
+      // setting the attributes based on odd or even criteria
+
+      // adding the element to the container
+      cont.appendChild(element);
+    }
+  }
+
+  function StringsData() {
+    var about = [
+      "1. The String object lets you work with a series of characters; it wraps Javascript's string primitive data type with a number of helper methods..",
+      "2. JavaScript automatically converts between string primitives and String objects, you can call any of the helper methods of the String object on a string primitive.",
+      "3. A string can be any text inside double or single quotes",
+      "4. JavaScript strings are used for storing and manipulating text.",
+    ];
+
+    // Selecting the parent container
+    var cont = document.getElementById("container4");
+    cont.innerHTML = null;
+    // looping the students list
+    for (i = 0; i < about.length; i++) {
+      // creating the student element
+      var element = document.createElement("div");
+      element.textContent = about[i];
+
+      // setting the attributes based on odd or even criteria
+
+      // adding the element to the container
+      cont.appendChild(element);
+    }
+  }
+
+  function NumbersData() {
+    var about = [
+      "1. A Number only keeps about 17 decimal places of precision; arithmetic is subject to rounding.",
+      "2. The Number() function converts the object argument to a number that represents the object's value",
+      "3. If the value cannot be converted to a legal number, NaN is returned",
+      "4. JavaScript Number can store various numeric values like integer, float, hexadecimal, decimal, exponential and octal values.",
+    ];
+
+    // Selecting the parent container
+    var cont = document.getElementById("container5");
+    cont.innerHTML = null;
+    // looping the students list
+    for (i = 0; i < about.length; i++) {
+      // creating the student element
+      var element = document.createElement("div");
+      element.textContent = about[i];
+
+      // setting the attributes based on odd or even criteria
+
+      // adding the element to the container
+      cont.appendChild(element);
+    }
+  }
+
+  function nullData() {
+    var about = [
+      "1. 'Null' is a keyword in JavaScript that signifies 'no value' or nonexistence of any value.",
+      "2. null expresses a lack of identification, indicating that a variable points to no object.",
+      "3. NULL is a special marker used in Structured Query Language to indicate that a data value does not exist in the database",
+      "4. In computer programming, null is both a value and a pointer. Null is a built-in constant that has a value of zero.",
+    ];
+
+    // Selecting the parent container
+    var cont = document.getElementById("container6");
+    cont.innerHTML = null;
+    // looping the students list
+    for (i = 0; i < about.length; i++) {
+      // creating the student element
+      var element = document.createElement("div");
+      element.textContent = about[i];
+
+      // setting the attributes based on odd or even criteria
+
+      // adding the element to the container
+      cont.appendChild(element);
+    }
+  }
+
+  function undefinedData() {
+    var about = [
+      "1. Undefined means that the variable value has not been defined; it is not known what the value is.",
+      "2. undefined is a property of the global object. That is, it is a variable in global scope.",
+      "3. A function can include one or more parameters",
+      "A named function is a function declaration if it appears as a statement",
+    ];
+
+    // Selecting the parent container
+    var cont = document.getElementById("container7");
+    cont.innerHTML = null;
+    // looping the students list
+    for (i = 0; i < about.length; i++) {
+      // creating the student element
+      var element = document.createElement("div");
+      element.textContent = about[i];
+
+      // setting the attributes based on odd or even criteria
+
+      // adding the element to the container
+      cont.appendChild(element);
+    }
+  }
+</script>

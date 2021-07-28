@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+
+    <p style="font-size: 50px;">This example uses the addEventListener() method to attach a "resize" event on the window object.</p>
+
+    
+    <script>
+        window.addEventListener("resize", randomChange);
+
+        
+        function random(number) {
+                return Math.floor(Math.random() * number)
+            }
+
+            function randomColor() {
+                return 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+            }
+
+            function randomChange() {
+                var color_value = randomColor();
+                document.getElementById("body").style.backgroundColor = color_value;
+            }
+    </script>
+
+</body>
+</html>

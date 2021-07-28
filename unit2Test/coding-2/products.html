@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <link rel="stylesheet" href="products.css">
+  </head>
+  <body>
+    <div id="main">
+      <!-- nav bar start -->
+
+      <div>
+        <ul>
+          <li style="float: left"><a href="products.html">Product</a></li>
+          <li><a href="carts.html">CART</a></li>
+        </ul>
+
+        <!-- nav bar end -->
+
+        <div id="slide"></div>
+
+        <button
+          style="
+            width: 150px;
+            height: 50px;
+            font-weight: bolder;
+            font-size: 20px;
+            border-radius: 15px;
+          "
+        >
+          Sort by Price
+        </button>
+
+        <div id="btn">
+          <button onclick="sortLH()">Sort Low to High</button>
+          <button onclick="sortHL()">Sort High to Low</button>
+        </div>
+
+        <div id="jewelary"></div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="products.js"></script>

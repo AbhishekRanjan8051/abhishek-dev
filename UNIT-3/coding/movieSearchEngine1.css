@@ -1,0 +1,25 @@
+body{
+    text-align:center;
+}
+.moviesearch{
+    width:30%;
+    height: 30px;
+    background-color: thistle;
+    border-radius: 10px;
+    margin-bottom:10px;
+    text-align:center;
+    font-size:25px;
+}
+.btn{
+    height:45px;
+    width:100px;
+    font-size: 35px;
+    border-radius: 10px;
+    background-color:mediumseagreen;
+
+}
+.btn:hover{
+    background-color:red;
+    cursor: pointer;
+    
+}

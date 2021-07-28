@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>custom array</title>
+  </head>
+  <body>
+    <h1>Custom array 1</h1>
+  </body>
+</html>
+<script>
+  function myArray(x) {
+    this.length = arguments.length;
+  }
+  const arr = new myArray(55, 28, 95, 65, "hi", "abhishek", 100);
+
+  console.log(arr);
+    
+</script>

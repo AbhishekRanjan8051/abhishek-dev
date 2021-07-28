@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>Own Libray server</div>
+  </body>
+</html>
+
+<script>
+  function myArray(x) {
+    // console.log(arguments);
+
+    this.length = arguments.length;
+
+    for (let i = 0; i < this.length; i++) {
+      //   console.log(arguments[i]);
+      this[`${i}`] = arguments[i];
+    }
+  }
+
+
+  //making own language library
+  const arr = new myArray(11, 52, 3, "abc");
+
+  myArray.prototype.पुश = function (p) {
+    let index = this.length;
+    this[index] = p;
+    this.length++;
+  };
+
+  myArray.prototype.गायब = function () {
+    let index = this.length - 1;
+
+    delete this[index];
+    this.length--;
+  };
+
+  arr.पुश(45);
+  arr.पुश(458);
+  arr.पुश(8945);
+
+  arr.गायब();
+
+  console.log("arr:", arr);
+</script>

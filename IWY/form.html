@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      }
+      /* style of nav bar starts */
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: rgb(66, 66, 66);
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+      }
+
+      li a:hover:not(.active) {
+        background-color: rgb(255, 253, 253);
+        color: rgb(255, 0, 0);
+      }
+
+      .active {
+        background-color: #f70e0e;
+      }
+      #logo {
+        color: white;
+      }
+      /* style of nav bar end */
+      input {
+        padding: 20px;
+        margin: 20px;
+        width: 30%;
+        font-size: x-large;
+        color: rgb(0, 0, 0);
+      }
+      button {
+        width: 35%;
+        padding: 20px;
+        margin-top: 50px;
+        font-size: xx-large;
+        font-size: 24px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        color: #fff;
+        background-color: #ff0202;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+      }
+      button:hover {
+        background-color: #690808;
+      }
+
+      button:active {
+        background-color: #dd5555;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }
+      #thank {
+        margin: 50px;
+        font-size: 60px;
+        font-weight: 900;
+        color: rgb(245, 63, 63);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- nav bar start -->
+    <ul>
+      <li style="float: left">
+        <a id="logo" href="Products.html"
+          ><img
+            src="https://img.icons8.com/ios-filled/50/000000/javascript-logo.png"
+        /></a>
+      </li>
+      <li><a href="Products.html">Products</a></li>
+      <li><a href="form.html">Add products</a></li>
+      <li style="float: right">
+        <a class="active" href="cart.html"
+          ><img
+            src="https://img.icons8.com/material-outlined/30/000000/shopping-cart--v2.png"
+        /></a>
+      </li>
+    </ul>
+    <!-- nav bar end -->
+    <!-- form starts -->
+    <center><h1>Add Products</h1></center>
+    <center>
+      <div id="thank"></div>
+      <form action="" id="myForm">
+        <input type="text" id="name" placeholder="Product name" />
+        <br />
+        <input type="number" id="price" placeholder="price" />
+        <br />
+        <input type="text" id="img" placeholder="Product image link" />
+        <br />
+      </form>
+      <button type="submit" onclick="addProduct()">Add Product</button>
+      <br />
+    </center>
+  </body>
+</html>
+
+<!-- script starts -->
+<script>
+  function addProduct() {
+    var thank = document.getElementById("thank");
+    var form = document.getElementById("myForm");
+    let name = form.name.value;
+    let price = form.price.value;
+    let image = form.img.value;
+    if (name != "" && price != "" && image != "") {
+      let product = {
+        name,
+        price,
+        image,
+      };
+
+      let arr;
+      arr = localStorage.getItem("products");
+      if (arr == null) {
+        arr = [];
+      } else {
+        arr = JSON.parse(localStorage.getItem("products"));
+      }
+
+      arr.push(product);
+      localStorage.setItem("products", JSON.stringify(arr));
+
+      var thankyou = document.createElement("p");
+      thankyou.innerHTML = "Thank You! Your Product is added successfuly";
+
+      thank.append(thankyou);
+    }
+  }
+</script>
