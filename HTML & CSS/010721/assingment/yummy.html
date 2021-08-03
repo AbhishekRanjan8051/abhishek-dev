@@ -1,159 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>yummly.html</title>
+    <title>yummy</title>
     <style>
       #container {
-        color: rgb(85, 84, 84);
-        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f2f2f2;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
         max-width: 65%;
         margin: auto;
-      }
-
-      #first_row > div {
-        width: 32%;
-        float: left;
-        margin-bottom: 50px;
-      }
-
-      #first_row > div > img:nth-child(1) {
-        width: 100%;
-      }
-
-      #first_row > div > img:nth-child(2) {
-        border-radius: 50%;
-        padding: 10px;
-        width: 20%;
-        float: right;
-      }
-
-      #first_row > div > div {
-        line-height: 20px;
-        letter-spacing: 1px;
-        padding: 10px 0px;
-      }
-
-      #first_row > div > span {
-        padding: 10px 0px;
-      }
-
-      #first_row > div:nth-child(2) {
-        margin-left: 2%;
-        margin-right: 2%;
-      }
-
-      #second_row {
-        clear: both;
-      }
-
-      #second_row > div {
-        float: left;
-        width: 32%;
-      }
-
-      #second_row > div > img:nth-child(1) {
-        width: 100%;
-      }
-
-      #second_row > div > img:nth-child(2) {
-        border-radius: 50%;
-        padding: 10px;
-        width: 20%;
-        float: right;
-      }
-
-      #second_row > div > div {
-        line-height: 20px;
-        letter-spacing: 1px;
-        padding: 10px 0px;
-      }
-
-      #second_row > div > span {
-        padding: 10px 0px;
-      }
-
-      #second_row > div:nth-child(2) {
-        margin-left: 2%;
-        margin-right: 2%;
+        height: 1080px;
       }
 
       h3 {
         text-align: center;
+        font-size: 30px;
+        color: #574f50;
+      }
+      .first-div {
+        display: flex;
+        flex-direction: row;
+        margin-left: 25px;
+        /* flex-wrap: wrap; */
+      }
+      .first-div > div {
+        width: 30%;
+        float: left;
+        margin-bottom: 50px;
+        padding: 10px;
+      }
+
+      .first-div > div > img {
+        width: 100%;
+        height: 300px;
+      }
+      .first-div > div > div {
+        /* line-height: 20px; */
+        /* letter-spacing: 1px; */
+        padding: 10px 0px;
+        color: #847974;
+        font-weight: 550;
+        font-size: 15px;
+      }
+      .first-div span {
+        color: #c8cacd;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .second-div {
+        display: flex;
+        flex-direction: row;
+        margin-left: 25px;
+      }
+      .second-div > div {
+        width: 30%;
+        float: left;
+        margin-bottom: 50px;
+        padding: 10px;
+      }
+
+      .second-div > div > img {
+        width: 100%;
+        height: 300px;
+      }
+      .second-div > div > div {
+        line-height: 20px;
         letter-spacing: 1px;
+        padding: 10px 0px;
+        color: #847974;
+        font-weight: 550;
+        font-size: 20px;
+      }
+      .second-div span {
+        color: #c8cacd;
+        font-size: 20px;
+        font-weight: 600;
       }
     </style>
   </head>
-
   <body>
     <div id="container">
       <div class="main">
-        <h3>WEEKNIGHT DINNERS</h3>
+        <h3>Weeknight Dinner</h3>
 
-        <div id="first_row">
+        <div class="first-div">
           <div>
             <img
-              src="./yummly_files/cc59dc778b73cb7340cc890https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_1200/hellofresh_s3/image/cotelettes-de-porc-au-miel-et-a-la-moutarde-8d480d40.jpg"
-              alt="Error"
+              src="https://lh3.googleusercontent.com/L8RbooGYp_gQGyEnxQU-vyXiVlNv2P05hYS-j3viudE08OSxQ_ashxwrm8mjHX2ziJhr95M_HBatVFlerZix=w1920-h1920-c-rj-v1-e365"
+              alt="sheet pan honey mustard pork chops"
             />
-            <img
-              src="https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_1200/hellofresh_s3/image/cotelettes-de-porc-au-miel-et-a-la-moutarde-8d480d40.jpg"
-              alt=""
-            />
-            <div>Loaded with Plant Based Protein topping</div>
+
+            <div>Sheet Pan Honey Mustard Pork Chops</div>
             <span>YUMMY</span>
           </div>
+
           <div>
             <img
-              src="./yummly_files/ecc6090d7e0d16e2eec85fe494cb63e2.png"
-              alt="Error"
+              src="https://dressings-sauces.org/wp-content/uploads/2018/10/adobestock_19455395.jpg"
+              alt="apricot mustard glaze imag"
             />
-            <img src="./yummly_files/81KcwWOQIsL.png" alt="" />
-            <div>Classic delight with mozzarella cheese</div>
+
+            <div>Apricot Mustard Glazed Hum</div>
             <span>YUMMY</span>
           </div>
+
           <div>
             <img
-              src="./yummly_files/078c9aaede32f49543c62a4fbb7b9bf8.jpg"
-              alt="Error"
+              src="https://lh3.googleusercontent.com/uQCNn3448jOLYYOASpZx1M_oRaU9-mz5kTYB17tuj5SHwhodCEHf3evBh1yMtAth1QzK_uiEBiH3uDIYQIxY=w2700-h2700-c-rj-v1-e365"
+              alt="pork milines with sauces"
             />
-            <img src="./yummly_files/81KcwWOQIsL.png" alt="" />
-            <div>Mexican herbs sprinkled on onion, capsicum</div>
+
+            <div>Pork Milanese with Cacio e Pepe Spaghetti</div>
             <span>YUMMY</span>
           </div>
         </div>
 
         <h3>Popular Now</h3>
 
-        <div id="second_row">
+        <div class="second-div">
           <div>
             <img
-              src="./yummly_files/610de4cd859f11125bb0a522b676984d.jpg"
-              alt="Error"
+              src="https://assets.epicurious.com/photos/54b291cea801766f773fa6a7/master/pass/367569_brown-sugar-cookies_1x1.jpg"
+              alt="brown suagar cookies"
             />
-            <img src="./yummly_files/81KcwWOQIsL.png" alt="" />
-            <div>Mexican herbs sprinkled on onion, capsicum</div>
+
+            <div>Brown Sugar Cookies</div>
             <span>YUMMY</span>
           </div>
+
           <div>
             <img
-              src="./yummly_files/45a1dc1106bd6cce7416b588f6338fec.jpg"
-              alt="Error"
+              src="https://www.thespruceeats.com/thmb/uB-VeRk1LDfakKD_raKsiWK5I9k=/3456x3456/smart/filters:no_upscale()/vegan-lasagna-with-eggplant-and-tofu-466763300-5ab204963418c60036f52c3d.jpg"
+              alt="vegan spinach lasagna"
             />
-            <img src="./yummly_files/81KcwWOQIsL.png" alt="" />
-            <div>Classic delight with mozzarella cheese</div>
+
+            <div>Vegan Spanich Lasagna</div>
             <span>YUMMY</span>
           </div>
+
           <div>
             <img
-              src="./yummly_files/e93df61ec410dbdd3deea0386e8bca5c.jpg"
-              alt="Error"
+              src="https://lh3.googleusercontent.com/T5Xyezyxo6HbrkSXLLCeDuC_2YUtT1E7wNJCV1xXElIB0vZ3Pt9GrQR2r8UKh37xNFWY-U7SyT7tGkoDJPDJ2Q=w1920-h1920-c-rj-v1-e365"
+              alt="sticky korean sticky chicken"
             />
-            <img src="./yummly_files/81KcwWOQIsL.png" alt="" />
-            <div>Loaded with Plant Based Protein topping</div>
+
+            <div>Sticky Korean Sticky Chicken</div>
             <span>YUMMY</span>
           </div>
         </div>
