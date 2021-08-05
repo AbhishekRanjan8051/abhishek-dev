@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vaccination</title>
+
+    <style>
+      body {
+        background-color: #121a27;
+      }
+
+      body > div {
+        margin: auto;
+
+        text-align: center;
+
+        background: linear-gradient(90deg, #48c6ef 0%, #6f86d6 100%);
+        width: 50%;
+        margin-top: 50px;
+        border-radius: 10%;
+      }
+
+      h1 {
+        color: white;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 50px;
+      }
+      input {
+        height: 50px;
+        width: 65%;
+        border-radius: 20px;
+        text-decoration: none;
+      }
+      button {
+        margin: 10px;
+        height: 45px;
+        width: 25%;
+        font-size: xx-large;
+        border-radius: 10px;
+        background-color: #fe0000;
+      }
+      button:hover {
+        cursor: pointer;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Vaccination for Covid-19</h1>
+
+      <div>
+        <input type="text" id="name" />
+        <br />
+        <button onclick="register()">Register</button>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  let queue = ["abhishek", "ranjan", "arpit", "rambhu"];
+
+  function register() {
+    const name = document.getElementById("name").value;
+
+    queue.push(name);
+
+    let message = `${name} has been registered`;
+
+    alert(message);
+
+    let promise = new Promise(function (resolve, reject) {
+      setInterval(function () {
+        if (queue[0] == name) {
+          resolve(`${name} go to home`);
+        }
+      }, 1000);
+    });
+
+    promise.then(function (res) {
+      alert(res);
+    });
+  }
+
+  function startVaccination() {
+    queue.shift();
+    console.log("queue:", queue);
+
+    if (queue.length == 0) {
+      clearInterval(interval);
+    }
+  }
+
+  let number = queue.length * 5000;
+  var random = Math.floor(Math.random() * number);
+  console.log("random:", random);
+  let interval = setInterval(startVaccination, random);
+</script>
