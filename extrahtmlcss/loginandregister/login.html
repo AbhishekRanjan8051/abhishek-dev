@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login and Register page</title>
+
+    <link rel="stylesheet" href="login.css" />
+  </head>
+
+  <body>
+    <div class="hero">
+      <div class="form-box">
+        <div class="button-box">
+          <div id="btn"></div>
+          <button class="toggle-btn" onclick="login()">Login</button>
+          <button class="toggle-btn" onclick="register()">Register</button>
+        </div>
+        <div class="social-icons">
+          <img src="facebook.png" alt="" />
+          <img src="google.png" alt="" />
+          <img src="twitter.png" alt="" />
+        </div>
+
+        <form id="login" class="input-group">
+          <input
+            type="text"
+            class="input-feild"
+            id="userid"
+            placeholder="User Id"
+            required
+          />
+          <input
+            type="text"
+            class="input-feild"
+            id="psw"
+            placeholder="Password"
+            required
+          />
+
+          <input type="checkbox" class="checkbox" /><span
+            >Remember Password</span
+          >
+
+          <button type="button" class="sumbit-btn" onsubmit="startLogin(event)">
+            Log In
+          </button>
+        </form>
+
+        <!-- sign in -->
+        <div>
+          <form action="" id="register" class="input-group">
+            <input
+              type="text"
+              class="input-feild"
+              id="userid"
+              placeholder="User Id"
+              required
+            />
+            <input
+              type="email"
+              class="input-feild"
+              id="emailid"
+              placeholder="email id"
+              required
+            />
+            <input
+              type="text"
+              class="input-feild"
+              id="psw"
+              placeholder="Password"
+              required
+            />
+
+            <input type="checkbox" class="checkbox" /><span
+              >I agree to the agreements</span
+            >
+
+            <button
+              type="button"
+              class="sumbit-btn"
+              onclick="storeInformation()"
+            >
+              Register
+            </button>
+          </form>
+        </div>
+      </div>
+      <div id="data"></div>
+    </div>
+  </body>
+</html>
+
+<script src="login.js"></script>
