@@ -8,6 +8,8 @@
   </head>
   <body>
     Api
+
+    <div id="data"></div>
   </body>
 </html>
 
@@ -15,10 +17,13 @@
   async function getData() {
     let response = await fetch(`https://restcountries.eu/rest/v2/all`);
     let data = await response.json();
-    // console.log("data:", data);
+    console.log("data:", data);
 
-    data.forEach((country) =>{
-                  
-    })
+    data.forEach(
+      ({ name, capital, population, languages: [{ name: lang }] }) => {
+        console.log(name, capital, population, lang);
+      }
+    );
   }
+  getData();
 </script>
