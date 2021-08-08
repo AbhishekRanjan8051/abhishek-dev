@@ -20,10 +20,10 @@ async function myFunction() {
   } else if (data.imdbRating > 8.5) {
     output.innerHTML = `<div id="main"><img src="${data.Poster}" id="poster" alt="" />
               <br />
-              <h1 id="heading">${data.Title}</h1>
+              <h1 id="Heading">${data.Title}</h1>
               <div id = "recomdation">Recommanded</div>
-              <p id="date">release date : ${data.DVD}</p>
-              <p id="actor">actors : ${data.Actors}</p>
+              <p id="date">Release date : ${data.DVD}</p>
+              <p id="actor">Actors : ${data.Actors}</p>
               <p id="rating">IMDB rating : ${data.imdbRating}</p></div>`;
   } else {
     output.innerHTML = `<div id="main"><img src="${data.Poster}" id="poster" alt="" />
