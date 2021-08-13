@@ -1,46 +1,66 @@
+function classicalProblem(data) {
+  let stack = [];
+
+  for (let i = 0; i < data.length; i++) {
+    if (data[i] == "(" || data[i] == "[" || data[i] == "{") {
+      stack.push(data[i]);
+      continue;
+    }
+
+    if (stack.length == 0) {
+      return false;
+    }
+
+    let checkClassical = "";
+
+    switch (data[i]) {
+      case ")":
+        checkClassical = stack.pop();
+        if (checkClassical == "{" || checkClassical == "[") {
+          return false;
+        }
+        break;
+
+      case "}":
+        checkClassical = stack.pop();
+        if (checkClassical == "(" || checkClassical == "[") {
+          return false;
+        }
+        break;
+
+      case "]":
+        checkClassical = stack.pop();
+        if (checkClassical == "(" || checkClassical == "{") {
+          return false;
+        }
+        break;
+    }
+  }
+
+  return stack.length == 0;
+}
+
 function runProgram(input) {
   var newInput = input.split("\n");
 
-  var testCase = +newInput[0];
+  var testCases = Number(newInput[0]);
 
-  for (var a = 1; a <= testCase; a++) {
-    var data = newInput[a].trim().split("");
+  for (var i = 1; i <= testCases; i++) {
+    var data = newInput[i].trim();
 
-    let stack = [];
-    let sta = [];
-
-    for (var i = 0; i < data.length; i++) {
-      if (data[i] == "(" || data[i] == "{" || data[i] == "[") {
-        stack.push(data[i]);
-      } else if (data[i] == ")" || data[i] == "}" || data[i] == "]") {
-        sta.push(data[i]);
-      }
+    if (classicalProblem(data) == true) {
+      console.log("balanced");
+    } else {
+      console.log("not balanced");
     }
-    // if (stack.length <= 0) {
-    //   console.log("balanced");
-    // } else {
-    //   console.log("not balanced");
-    // }
-    let k = 0;
-    let j = stack.length - 1;
-    while (k < j) {
-      if (stack[k] == sta[j]) {
-        console.log("Possible");
-      } else {
-        console.log("no");
-      }
-      k++;
-      j--;
-    }
-    // console.log("sta:", sta);
-
-    // console.log("stack:", stack);
   }
 }
 if (process.env.USERNAME === "abhis") {
-  runProgram(`1
-  [{({})}]
-`); //write test case here
+  runProgram(`3
+  {([])}
+  ()
+  ([]
+  `); //write test case here
 } else {
   process.stdin.resume();
   process.stdin.setEncoding("ascii");
