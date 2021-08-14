@@ -12,11 +12,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 
 .youtube-logo {
   height: 70px;
+  width: 10rem;
+  margin: 0 0 0 2.5rem;
 }
 
 .search-box {
@@ -24,21 +26,19 @@ body {
   display: flex;
   margin: 0 0 0 15rem;
   flex-direction: row;
-  height: 45px;
+  height: 35px;
+  width: 10rem;
 }
 
 .search-videos {
-  width: 65%;
+  width: 75%;
   font-size: inherit;
   padding: 0.4em;
-  border: 3px solid rgb(211, 85, 85);
-  border-radius: 10px;
+  border: 1px solid rgb(211, 85, 85);
   font-weight: lighter;
 }
 
 .search-btn {
-  margin-left: 1%;
-  border-radius: 5px;
   width: 10%;
   background: linear-gradient(90deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
 }
@@ -51,20 +51,25 @@ body {
 #videos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  
-  gap: 05px;
+
+  gap: 1rem;
   padding: 3rem 0;
-  margin: 0 10rem;
+  margin: 0 20rem;
   border-top: 4px solid white;
 }
 .icon {
   display: flex;
   flex-direction: row;
-  margin: 0 0 0 25%;
+  margin: 0 3% 0 10%;
 }
 
 .icon a {
-  margin-left: 20px;
+  margin-left: 15px;
+}
+
+.icon a img {
+  height: 3rem;
+  width: 3rem;
 }
 
 .icon a:hover {
