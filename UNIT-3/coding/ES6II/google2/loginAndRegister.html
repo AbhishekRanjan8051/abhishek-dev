@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masai Sign up</title>
+
+    <style>
+        * {
+            /* background-image: url(); */
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        #Register {
+            background-color: rgb(0, 255, 98);
+            border-radius: 30px;
+        }
+
+        #login {
+            background-color: rgb(17, 235, 188);
+            border-radius: 30px;
+            margin-left: 1rem;
+        }
+
+        #forms {
+            max-width: 40%;
+            margin:auto;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        form {
+            width: 10%;
+            text-align: center;
+            font-weight: bolder;
+            font-size: 1rem
+        }
+
+        #forms div {
+            flex: 5;
+            padding-left: 10%;
+        }
+
+        .btn {
+            cursor: pointer;
+            margin:5px 0 0 0;
+            border: 3px solid black;
+            border-radius: 5px;
+            background-color: #28d4b6; 
+        }
+
+        .btn:hover{
+            background-color:#a1d8ea;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Masai Sign up System</h1>
+    </center>
+    <div id="forms">
+
+        <div id="Register">
+
+            <h1>Register</h1>
+
+            <form onsubmit="Register(event)">
+                Name: <input type="text" id="inp1" /> Email:
+                <input type="email" id="inp2" /> Password:
+                <input type="password" id="inp3" /> Username:
+                <input type="text" id="inp4" /> Mobile:
+                <input type="text" id="inp5" /> Description:
+                <input type="text" id="inp6" />
+                <input type="submit" class="btn" />
+            </form>
+        </div>
+
+        <div id="login">
+            <h1>Login</h1>
+            <form action="" onsubmit="Login(event)">
+                Username:
+                <input type="text" id="inp7" />
+                Password:
+                <input type="password" id="inp8" />
+
+                <input type="submit" class="btn" />
+            </form>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
+
+<script src="loginAndRegister.js"></script>

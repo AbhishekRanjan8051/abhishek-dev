@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home page</title>
+
+    <style>
+      .navbar {
+        display: flex;
+        flex-direction: row;
+      }
+      img {
+        width: 5rem;
+        margin: 2rem;
+      }
+      input {
+        width: 30rem;
+        height: 2rem;
+        margin: auto;
+      }
+      button {
+        width: 5rem;
+        height: 2rem;
+        margin: auto auto auto -20rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <img
+        src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
+        alt=""
+      />
+      <input type="text" id="query" placeholder="search here" />
+      <button type="submit" name="Search" onclick="openSearch()">Search</button>
+    </div>
+    <div id="search"></div>
+  </body>
+</html>
+<script>
+  let search_div = document.getElementById("search");
+
+  async function openSearch() {
+    search_div.innerHTML = null;
+
+    let query = document.getElementById("query").value;
+
+    let res = await fetch( 
+      `http://api.serpstack.com/search?access_key=19c2767a1ecc1fdc3b723531ac1785bd&query=${query}`
+    );
+    let data = await res.json();
+    console.log(data);
+
+    // let { organic_results } = data;
+
+
+    // organic_results.forEach((organic_results) => {
+    //   let div = document.createElement("div");
+
+    //   div.innerHTML = `
+    //       <h1>${res.title}</h1> <br> <a href = "${res.url}">${res.url}</a>
+    //       <p>${res.snippet}</p>
+    //     `;
+    // });
+  }
+  openSearch();
+</script>
