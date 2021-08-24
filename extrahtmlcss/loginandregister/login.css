@@ -43,7 +43,7 @@
   position: absolute;
   width: 110px;
   height: 100%;
-  background: linear-gradient(to right, #ff105f, #ffad06);
+  background:linear-gradient(90deg, #1d976c 0%,#93f9b9 100% );
   border-radius: 30px;
   transition: 0.5s;
 }
@@ -82,7 +82,7 @@
   cursor: pointer;
   display: block;
   margin: auto;
-  background: linear-gradient(to right, #ff105f, #ffad06);
+  background:linear-gradient(90deg, #a80077 0%,#66ff00 100% );
   border: 0;
   outline: none;
   border-radius: 30px;
