@@ -14,18 +14,18 @@
 </html>
 
 <script>
-
-    // function to copy an obj
+  // function to copy an array
 
   function CopyArr(arr) {
     var myArr = [];
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = arr.length - 1; i >= 0; i--) {
       myArr.push(arr[i]);
+      myArr[2] = 8;
     }
     return myArr;
   }
 
-  //original obj
+  //original array
   var arr = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20];
   console.log("arr:", arr);
 

@@ -50,6 +50,7 @@
       <button onclick="checkAvailable()">
         Notify me when train is avaliable
       </button>
+      <button onclick="home()">Book Ticket</button>
     </div>
   </body>
 </html>
@@ -89,29 +90,31 @@
     setTimeout(function () {
       MtoG.pop();
       console.log("MtoG:", MtoG);
+
+      if (MtoG.length == 0) {
+        clearInterval(interval);
+      }
     }, canceling1 * 1000);
     setTimeout(function () {
       BtoG.pop();
       console.log("BtoG:", BtoG);
+      if (BtoG.length == 0) {
+        clearInterval(interval);
+      }
     }, canceling2 * 1000);
     setTimeout(function () {
       BitoG.pop();
       console.log("BitoG:", BitoG);
+      if (BitoG.length == 0) {
+        clearInterval(interval);
+      }
     }, canceling3 * 1000);
   }
-  // cancelTickets();
+  // cancelTickets(); 
 
   var interval = setInterval(cancelTickets, 1000);
 
-  function bookTicket() {
-    let bookTicket1 = Math.ceil(Math.random() * 4);
-    let bookTicket2 = Math.ceil(Math.random() * 4);
-    let bookTicket3 = Math.ceil(Math.random() * 4);
-
-    setTimeout(function () {
-      MtoG.push(bookTicket);
-      console.log("MtoG:", MtoG);
-    }, bookTicket1 * 1000);
+  function home() {
+    location.replace("homepage.html");
   }
-  bookTicket();
 </script>

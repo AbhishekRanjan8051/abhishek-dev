@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+
+    <style>
+      * {
+        background-color: aqua;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .main form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        /* padding-top: 5%; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <form action="" id="bookticket">
+          Name:-
+          <input
+            type="text"
+            id="name"
+            class="input-feild"
+            placeholder="Type your name"
+          />
+          Mobile No. :-
+          <input
+            type="text"
+            id="mobile"
+            class="input-feild"
+            placeholder="Mobile"
+          />
+          Email:-
+          <input
+            type="email"
+            id="email"
+            class="input-feild"
+            placeholder="Email"
+          />
+          Address:-
+          <input
+            type="text"
+            id="address"
+            class="input-feild"
+            placeholder="Address"
+          />
+          <input type="submit" onclick="sumbit()" />
+        </form>
+      </div>
+    </div>
+    <div id="data"></div>
+  </body>
+</html>
+
+<script>
+  let data_div = document.getElementById("data");
+
+  function sumbit() {
+    let form = document.getElementById("bookticket");
+
+    let name = document.getElementById("name").value;
+
+    let mobile = document.getElementById("mobile").value;
+
+    let email = document.getElementById("email").value;
+
+    let address = document.getElementById("address").value;
+
+    let information = {
+      name,
+      mobile,
+      email,
+      address,
+    };
+
+    let arr;
+
+    arr = localStorage.getItem("information");
+
+    if (arr == null) {
+      arr = [];
+    } else {
+      arr = JSON.parse(localStorage.getItem("information"));
+    }
+    arr.push(information);
+
+    localStorage.setItem("information", JSON.stringify(arr));
+  }
+</script>
