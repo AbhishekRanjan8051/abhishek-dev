@@ -4,37 +4,59 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>ToDo application</title>
+    <link rel="icon" href="todo-list-64.png" />
     <style>
       .done {
         text-decoration: line-through;
         color: black;
       }
-      body{
-          background-color:aquamarine
+      body {
+        background-image: url("todo-background.jpg");
       }
-      button{
-          height: 25px;
-          width: 150px;
-          font-size:20px;
-          font-weight: bold;
-          border-radius: 50px;
-          border: 2px solid red;
-          background-color:blueviolet
+      button {
+        height: 35px;
+        /* width: 150px; */
+        font-size: 1.16rem;
+        font-weight: bold;
+        border-radius: 10px;
+        border: 2px solid red;
+        background-color: #182329;
       }
-      #inp{
-          height: 30px;
-          width: 250px;
-          border-radius:10px ;
-          font-size: 30px;
+      #inp {
+        height: 30px;
+        width: 250px;
+        border-radius: 10px;
+        font-size: 30px;
+      }
+      .btn {
+        color: #ffff;
+        margin: auto;
+      }
+      button {
+        color: #ffff;
+      }
+      #list {
+        display: flex;
+        flex-direction: row;
+      }
+      .list-group {
+        font-size: 2rem;
+        color: #3002e5;
+      }
+      .done {
+        font-size: 1.5rem;
+        color: #f75003;
       }
     </style>
   </head>
   <body>
-    <h1>Todo List</h1>
+    <center>
+      <h1>Todo List</h1>
 
-    <input type="text" id="inp" />
-    <button onclick="addTask()">Add a task</button>
+      <input type="text" id="inp" />
+      <button class="btn" onclick="addTask()">Add Task</button>
+    </center>
 
     <div id="tasks"></div>
   </body>
@@ -45,13 +67,19 @@
 
   function addTask() {
     var div = document.createElement("div");
+
     var task = document.getElementById("inp").value;
 
-    id = id + 1;
+    if (task.length == 0) {
+      alret("provide");
+    } else {
+      id = id + 1;
 
-    div.innerHTML = `<p id=${id}>${task}</p> <button onclick="Done(${id})">Done</button> <button onclick="Remove(${id})">Remove</button> `;
+      div.innerHTML = ` <center><p class="list-group" id=${id}> ${id}. ${task}</p> <button onclick="Done(${id})">Done</button> <button onclick="Remove(${id})">Remove</button> </center>  `;
 
-    tasks.append(div);
+      tasks.append(div);
+    }
+
     // console.log(div);
   }
 
