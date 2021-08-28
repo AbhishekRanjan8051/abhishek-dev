@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    ES6 WE session
+  </body>
+</html>
+
+<script>
+  //ES6 Classes
+
+  class Stack {
+    constructor() {
+      //   this.name = "Stack";
+
+      this.stack = [];
+      this.length = 0;
+    }
+
+    insert(...b) {
+      b.forEach((el) => {
+        this.stack.push(el);
+        this.length++;
+      });
+    }
+
+    remove() {
+      this.stack.pop();
+      this.length--;
+    }
+
+    peek() {
+      let lastElement = this.stack[this.length - 1];
+      console.log("lastElement:", lastElement);
+    }
+  }
+
+  // Stack.prototype.push = function () {
+  //   console.log("worked");
+  // };
+
+  let x = new Stack();
+
+  x.insert("Abhishek Ranjan", "ram", "Arpit", "Rambhu", "Nitish");
+  x.remove();
+
+  x.peek();
+
+  console.log("x:", x);
+</script>

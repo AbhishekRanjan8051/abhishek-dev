@@ -1,8 +1,8 @@
 function Register(e) {
   e.preventDefault();
 
-  let formdata = {
-    name: document.getElementById("inp1").value,
+  let myFormData = {
+    name: document.getElementById("Inp1").value,
     email: document.getElementById("inp2").value,
     password: document.getElementById("inp3").value,
     username: document.getElementById("inp4").value,
@@ -10,13 +10,12 @@ function Register(e) {
     description: document.getElementById("inp6").value,
   };
 
-  formdata = JSON.stringify(formdata);
+  myFormData = JSON.stringify(myFormData);
 
   fetch("https://masai-api-mocker.herokuapp.com/auth/register", {
     method: "POST",
-    body: formdata,
+    body: myFormData,
 
-    //additional information // optional informational
     headers: {
       "Content-Type": "application/json",
     },
@@ -37,18 +36,17 @@ function Register(e) {
 function Login(e) {
   e.preventDefault();
 
-  let formdata = {
-    username: document.getElementById("inp7").value,
-    password: document.getElementById("inp8").value,
+  let myFormData = {
+    username: document.getElementById("inp8").value,
+    password: document.getElementById("inp9").value,
   };
 
-  body = JSON.stringify(formdata);
+  let bodyData = JSON.stringify(myFormData);
 
   fetch("https://masai-api-mocker.herokuapp.com/auth/login", {
     method: "POST",
-    body: body,
+    body: bodyData,
 
-    //additional information // optional informational
     headers: {
       "Content-Type": "application/json",
     },
@@ -59,10 +57,9 @@ function Login(e) {
 
     .then((res) => {
       console.log("res:", res);
-
-      let u = formdata.username;
+      let u = myFormData.username;
       let t = res.token;
-      getmyProfile(u, t);
+      getMyLoginData(u, t);
     })
 
     .catch((err) => {
@@ -70,8 +67,10 @@ function Login(e) {
     });
 }
 
-function getmyProfile(username, token) {
-  fetch(`https://masai-api-mocker.herokuapp.com/user/${username}`, {
+let mainBox = document.getElementById("mainDiv");
+
+function getMyLoginData(userName, token) {
+  fetch(`https://masai-api-mocker.herokuapp.com/user/${userName}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -81,13 +80,8 @@ function getmyProfile(username, token) {
     })
 
     .then((res) => {
-      console.log("res:", res);
-
-      if (res.username != null) {
+      if (res.name != "") {
         window.location.href = "home.html";
-      }
-      if (res.username != username) {
-        alert("username mismatch");
       }
     })
 

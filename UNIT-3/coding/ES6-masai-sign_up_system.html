@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masai Sign up</title>
+
+    <style>
+      * {
+        background-color: rgb(21, 224, 113);
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      #forms {
+        display: flex;
+        align-items: center;
+      }
+
+      form {
+        width: 10%;
+      }
+
+      #forms div {
+        flex: 1;
+        padding-left: 20%;
+      }
+
+      .btn {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <center><h1>Masai Sign up System</h1></center>
+    <div id="forms">
+      <div id="Register">
+        <h1>Register</h1>
+
+        <form onsubmit="Register(event)">
+          Name: <input type="text" id="inp1" /> Email:
+          <input type="email" id="inp2" /> Password:
+          <input type="password" id="inp3" /> Username:
+          <input type="text" id="inp4" /> Mobile:
+          <input type="text" id="inp5" /> Description:
+          <input type="text" id="inp6" />
+          <input type="submit" class="btn" />
+        </form>
+      </div>
+
+      <div id="login">
+        <h1>Login</h1>
+        <form action="" onsubmit="Login(event)">
+          Username:
+          <input type="text" id="inp7" />
+          Password:
+          <input type="text" id="inp8" />
+
+          <input type="submit" class="btn" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  function Register(e) {
+    e.preventDefault();
+
+    let formdata = {
+      name: document.getElementById("inp1").value,
+      email: document.getElementById("inp2").value,
+      password: document.getElementById("inp3").value,
+      username: document.getElementById("inp4").value,
+      mobile: document.getElementById("inp5").value,
+      description: document.getElementById("inp6").value,
+    };
+
+    formdata = JSON.stringify(formdata);
+
+    fetch("https://masai-api-mocker.herokuapp.com/auth/register", {
+      method: "POST",
+      body: formdata,
+
+      //additional information // optional informational
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        return res.json();
+      })
+
+      .then((res) => {
+        console.log("res:", res);
+      })
+
+      .catch((err) => {
+        console.log("err:", err);
+      });
+  }
+
+  function Login(e) {
+    e.preventDefault();
+
+    let formdata = {
+      username: document.getElementById("inp7").value,
+      password: document.getElementById("inp8").value,
+    };
+
+    body = JSON.stringify(formdata);
+
+    fetch("https://masai-api-mocker.herokuapp.com/auth/login", {
+      method: "POST",
+      body: body,
+
+      //additional information // optional informational
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        return res.json();
+      })
+
+      .then((res) => {
+        console.log("res:", res);
+
+        let u = formdata.username;
+        let t = res.token;
+        getmyProfile(u, t);
+      })
+
+      .catch((err) => {
+        console.log("err:", err);
+      });
+  }
+
+  function getmyProfile(username,token) {
+    fetch(`https://masai-api-mocker.herokuapp.com/user/${username}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => {
+        return res.json();
+      })
+
+      .then((res) => {
+        console.log("res:", res);
+      })
+
+      .catch((err) => {
+        console.log("err:", err);
+      });
+  }
+</script>

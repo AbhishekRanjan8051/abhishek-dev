@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    ES6 II class events
+  </body>
+</html>
+
+<script>
+  /*
+  //constructor function
+
+  function Person(n, a) {
+    this.name = n;
+    this.age = a;
+  }
+
+  //prototype additions
+
+
+  Person.prototype.city = "Bihar";
+
+  const person = new Person("raj", 18);
+  console.log("person:", person);
+*/
+
+  class Person {
+    constructor(n, a) {
+      this.name = n;
+      this.age = a;
+    }
+
+    showName() {
+      console.log(this.name);
+    }
+  }
+  const person = new Person("raj", 18);
+  console.log("person:", person);
+
+  person.showName();
+
+  //inheritance in Es6 classes
+
+  class Student extends Person {
+    constructor(n, a) {
+      super(n, a);
+
+      this.role = "Student";
+    }
+  } 
+  const person2 = new Student("raj", 18);
+  console.log("person2:", person2);
+</script>
