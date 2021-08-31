@@ -15,6 +15,7 @@ html {
   /* background:linear-gradient(90deg, #00d2ff 0%,#3a7bd5 100% ); */
 
   background-image: url("background.png");
+  background-size: 100% 100%;
   color: #ffff;
   display: flex;
   justify-content: center;
@@ -22,34 +23,12 @@ html {
 }
 
 
-/* custom shape divider styles start*/
-.custom-shape-divider-top-1630376213 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-
-.custom-shape-divider-top-1630376213 svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 119px;
-}
-
-.custom-shape-divider-top-1630376213 .shape-fill {
-  fill: #FFFFFF;
-}
-
-
-/* custom shape divider html end*/
 
 .calender {
   width: 45rem;
   height: 52rem;
   background: linear-gradient(90deg, #16a085 0%, #11d167 100%);
+  opacity: 0.8;
   box-shadow: 0 0.5 3rem rgba(0, 0, 0, 0.4);
 }
 
