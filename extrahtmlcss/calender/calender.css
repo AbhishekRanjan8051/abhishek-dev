@@ -12,17 +12,44 @@ html {
 .container {
   width: 100%;
   height: 100vh;
-  background:linear-gradient(90deg, #00d2ff 0%,#3a7bd5 100% );
+  /* background:linear-gradient(90deg, #00d2ff 0%,#3a7bd5 100% ); */
+
+  background-image: url("background.png");
   color: #ffff;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+
+/* custom shape divider styles start*/
+.custom-shape-divider-top-1630376213 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1630376213 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 119px;
+}
+
+.custom-shape-divider-top-1630376213 .shape-fill {
+  fill: #FFFFFF;
+}
+
+
+/* custom shape divider html end*/
+
 .calender {
   width: 45rem;
   height: 52rem;
-  background:linear-gradient(90deg, #16a085 0%,#11d167 100% );
+  background: linear-gradient(90deg, #16a085 0%, #11d167 100%);
   box-shadow: 0 0.5 3rem rgba(0, 0, 0, 0.4);
 }
 
@@ -89,7 +116,7 @@ html {
 }
 
 .days div:hover:not(.today) {
-    background:linear-gradient(90deg, #dd5e89 0%,#f7bb97 100% );
+  background: linear-gradient(90deg, #da22ff 0%, #9733ee 100%);
   border: 0.2rem solid #777;
   cursor: pointer;
   border-radius: 0.5rem;
@@ -101,6 +128,6 @@ html {
 }
 
 .today {
-    background:linear-gradient(90deg, #02111d 0%,#037bb5 50%,#02111d 100% );
+  background: linear-gradient(90deg, #e65c00 0%, #f9d423 100%);
   border-radius: 0.5rem;
 }
