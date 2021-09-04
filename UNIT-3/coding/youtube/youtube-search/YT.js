@@ -5,7 +5,7 @@ async function findVideos() {
 
   let query = document.getElementById("query").value;
   let res = await fetch(
-    `https://youtube.googleapis.com/youtube/v3/search?q=${query}&key=AIzaSyD638E-zvBxypcCWCNIB7__e2en9CC2q8E&maxResults=20`
+    `https://youtube.googleapis.com/youtube/v3/search?q=${query}&key=AIzaSyDi1p53V5S5pplsk_eY8D-pYzvQXlvWlSw&maxResults=20`
   );
 
   let data = await res.json();
